@@ -1,3 +1,13 @@
+@Author: Steven Welch <steven>
+@Date:   2018-11-19T17:35:22-07:00
+@Email:  WelchSteven@gmail.com
+@Project: SPSU
+@Filename: Caterina-Leonardo.txt
+@Last modified by:   steven
+@Last modified time: 2018-12-13T13:34:46-07:00
+
+
+
 Builds against LUFA version 111009
 make version 3.81
 avrdude version 5.11
@@ -9,3 +19,5 @@ Configured with: ../configure —prefix=/usr/local/CrossPack-AVR-20100115 —dis
 avr-libc version 1.6.7
 binutils version 2.19
 
+set fuses using avrdude
+avrdude -p m32u4 -c flip2 -P usb -Ulock:w:0x3F:m -Uefuse:w:0xcb:m -Uhfuse:w:0xd8:m -Ulfuse:w:0xff:m
