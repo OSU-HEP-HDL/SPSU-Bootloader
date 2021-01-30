@@ -1,0 +1,25 @@
+---
+- hosts: all
+  gather_facts: yes
+  become: true
+
+  tasks:
+    - name: Install Build tools
+      apt:
+        pkg:
+          - build-essential
+          - gcc-avr
+          - binutils
+          - avr-libc
+          - uisp
+          - avrdude
+          - flex
+          - byacc
+          - bison
+      state: present
+    
+    - name: Upgrade everything 
+      apt:
+        name: "*"
+        state: latest
+        force_apt_get: True
